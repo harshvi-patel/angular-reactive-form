@@ -1,0 +1,147 @@
+<body>
+    <div class="container-fluid registration_form">
+
+        <div class="row" id="box">
+            <div class="col-md-5 mt-5">
+                <div class="card border-0">
+                    <div class="card-body">
+                        <h1 class="text-center">Registration Form</h1>
+
+                        <form [formGroup]="reactiveForm" (ngSubmit)="onSubmit()">
+                            <div class="form-group row">
+                                
+                                <div class="col-md-12">
+                                    <input type="text" class="form-control" name="firstName" formControlName="firstName"
+                                        placeholder="First Name">
+                                    <div *ngIf="firstname.invalid && (firstname.touched || firstname.dirty)">
+                                        <small class="error" *ngIf="firstname.errors?.required">First name is
+                                            required.</small>
+                                        <small class="error" *ngIf="firstname.errors?.pattern">Only alphabets
+                                            allowed.</small>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                               
+                                <div class="col-md-12">
+                                    <input type="text" class="form-control" name="lastName" formControlName="lastName"
+                                        placeholder="Last Name">
+                                    <div *ngIf="lastname.invalid && (lastname.touched || lastname.dirty)">
+                                        <small class="error" *ngIf="lastname.errors?.required">First name is
+                                            required.</small>
+                                        <small class="error" *ngIf="lastname.errors?.pattern">Only alphabets
+                                            allowed.</small>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                              
+                                <div class="col-md-12">
+                                    <input type="text" class="form-control" name="mobileNumber"
+                                        formControlName="mobileNumber" placeholder="Mobile Number">
+                                    <div *ngIf="mobilenumber.invalid && (mobilenumber.touched || mobilenumber.dirty)">
+                                        <small class="error" *ngIf="mobilenumber.errors?.required">Mobile Number is
+                                            required.</small>
+                                        <small class="error" *ngIf="mobilenumber.errors?.pattern">Only numbers are
+                                            allowed.</small>
+                                        <small class="error" *ngIf="mobilenumber.errors?.minlength">Mobile number should
+                                            be of 10 digits.</small>
+                                        <small class="error" *ngIf="mobilenumber.errors?.maxlength">Mobile number can be
+                                            max 10 digits long.</small>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                              
+                                <div class="col-md-12">
+                                    <input type="text" class="form-control" name="emailId" formControlName="emailId"
+                                        placeholder="Email id">
+                                    <div *ngIf="emailid.invalid && (emailid.touched || emailid.dirty)">
+                                        <small class="error" *ngIf="emailid.errors?.required">Email id is
+                                            required.</small>
+                                        <small class="error" *ngIf="emailid.errors?.pattern">Enter valid email
+                                            id.</small>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                               
+                                <div class="col-md-12">
+                                    <input type="text" class="form-control" name="city" formControlName="city"
+                                        placeholder="City">
+                                    <div *ngIf="cityname.invalid && (cityname.touched || cityname.dirty)">
+                                        <small class="error" *ngIf="cityname.errors?.required">City is required.</small>
+                                        <small class="error" *ngIf="cityname.errors?.pattern">Only alphabets
+                                            allowed.</small>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                
+                                <div class="col-md-12">
+                                    <input type="text" class="form-control" name="pincode" formControlName="pincode"
+                                        placeholder="Pincode">
+                                    <div
+                                        *ngIf="pincodenumber.invalid && (pincodenumber.touched || pincodenumber.dirty)">
+                                        <small class="error" *ngIf="pincodenumber.errors?.required">Pincode is
+                                            required.</small>
+                                        <small class="error" *ngIf="pincodenumber.errors?.pattern">Only numbers
+                                            allowed.</small>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                
+                                <div class="col-md-12">
+                                    <input type="text" class="form-control" name="userName" formControlName="userName"
+                                        placeholder="Username">
+                                    <div *ngIf="username.invalid && (username.touched || username.dirty)">
+                                        <small class="error" *ngIf="username.errors?.required">Username is
+                                            required.</small>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                               
+                                <div class="col-md-12">
+                                    <input type="password" class="form-control" name="passWord" formControlName="passWord"
+                                        placeholder="Password">
+                                    <div *ngIf="password.invalid && (password.touched || password.dirty)">
+                                        <small class="error" *ngIf="password.errors?.required">Password is
+                                            required.</small>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                               
+                                <div class="col-md-12">
+                                    <input type="password" class="form-control" name="confirmPassword"
+                                        formControlName="confirmPassword" placeholder="Confirm Password">
+                                    <div
+                                        *ngIf="confirmpassword.invalid && (confirmpassword.touched || confirmpassword.dirty)">
+                                        <small class="error" *ngIf="confirmpassword.errors?.required">Confirm your
+                                            password.</small>
+
+                                    </div>
+                                </div>
+                            </div> 
+                           
+                            <!-- <button type="submit" class="btn" [disabled]="reactiveForm.invalid">Submit</button> -->
+                            <button type="submit" class="btn">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>

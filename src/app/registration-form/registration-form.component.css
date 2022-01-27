@@ -1,0 +1,68 @@
+/* body
+{
+    margin: 0px;
+    padding: 0px;
+    background: linear-gradient(#18243a, #335275);
+} */
+.registration_form {
+    background: linear-gradient(#18243a, #335275);
+    height: 100vh;
+  }
+  #box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .card-body {
+    background: rgb(16, 20, 36);
+  }
+  .card-body h1
+  {
+    color: white;
+    text-shadow: 2px 2px rgb(29, 150, 150);
+  }
+  ::placeholder {
+    color: white;
+  }
+  
+  input[type="text"],
+  [type="password"] {
+    background: transparent;
+    border: none;
+    border-radius: 0px;
+    border-bottom: 1px solid white;
+    color: white;
+  }
+  .form-control:focus {
+    border-color: inherit;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+  input:focus::placeholder {
+    color: rgb(29, 150, 150);
+  }
+  .btn
+  {
+      margin:0 auto;
+      display:block;
+      border-color: rgb(29, 150, 150);
+      color: white;
+  }
+  .btn:focus, .btn:hover
+  {
+      background-color: rgb(29, 150, 150);
+  }
+
+  /* .form-control.ng-touched.ng-invalid
+  {
+    border: 1px solid red;
+  }
+  .form-control.ng-touched.ng-valid
+  {
+    border: 1px solid green;
+  } */
+  .error
+  {
+    color: red;
+  }
