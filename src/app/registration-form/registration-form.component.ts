@@ -10,7 +10,7 @@ export class RegistrationFormComponent implements OnInit {
   constructor() {}
 
   reactiveForm: any;
-
+  
   ngOnInit(): void {
     this.reactiveForm = new FormGroup({
       firstName: new FormControl('', [
@@ -43,7 +43,7 @@ export class RegistrationFormComponent implements OnInit {
         Validators.pattern('^[0-9]*$'),
       ]),
       userName: new FormControl('', Validators.required),
-      passWord: new FormControl('', Validators.required),
+      password: new FormControl('', [Validators.required, Validators.pattern(/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[^\w\s]).([^\s]*){8,}$/),]),
       confirmPassword: new FormControl('', Validators.required),
     });
   }
@@ -70,15 +70,17 @@ export class RegistrationFormComponent implements OnInit {
     return this.reactiveForm.get('userName');
   }
   get password() {
-    return this.reactiveForm.get('passWord');
+    return this.reactiveForm.get('password');
   }
   get confirmpassword() {
     return this.reactiveForm.get('confirmPassword');
   }
-
+//Logic for submit button.
   onSubmit() {
+    //submit form if all the fields are valid.
     if (this.reactiveForm.valid) {
       console.log(this.reactiveForm.value);
+      this.reactiveForm.reset();
     } else {
       let key = Object.keys(this.reactiveForm.controls);
       key.filter((data) => {
@@ -90,3 +92,4 @@ export class RegistrationFormComponent implements OnInit {
     }
   }
 }
+

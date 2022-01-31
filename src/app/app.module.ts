@@ -8,9 +8,13 @@ import { AppComponent } from './app.component';
 import { RegistrationFormComponent } from './registration-form/registration-form.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
+import { ConfirmEqualValidatorDirective } from './registration-form/confirm-equal-validator.directive';
 @NgModule({
-  declarations: [AppComponent, RegistrationFormComponent],
+  declarations: [
+    AppComponent,
+    RegistrationFormComponent,
+    ConfirmEqualValidatorDirective,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
